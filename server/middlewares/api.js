@@ -1,3 +1,4 @@
+// This Server File Is Added On Top Of Default React Boilerplate
 const low = require('lowdb');
 const bodyParser = require('body-parser');
 const uuid = require('uuid');

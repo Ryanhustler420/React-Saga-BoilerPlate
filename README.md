@@ -12,4 +12,6 @@
 
 ##### Useful Commands
 
-> npm run lint 
+> npm run lint
+
+> npm run clean
