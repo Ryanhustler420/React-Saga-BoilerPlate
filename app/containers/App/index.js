@@ -16,10 +16,11 @@ import Img from 'components/Img';
 import Footer from 'components/Footer';
 import Banner from './banner-metal.jpg';
 import A from 'components/A';
-
+// import bla from 'nowhere' // gives compilation error see on the browser
 import styles from './styles.css';
 
 function App(props) {
+  // const bla = notDefined.toString(); // gives runtime error set webback
   return (
     <div className={styles.wrapper}>
       <Helmet

@@ -62,7 +62,8 @@ module.exports = require('./webpack.base.babel')({
   },
 
   // Emit a source map for easier debugging
-  devtool: 'cheap-module-eval-source-map',
+  // Source-map will help to navigate the exact line where the error occur
+  devtool: 'source-map',
 });
 
 /**
