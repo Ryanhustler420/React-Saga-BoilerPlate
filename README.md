@@ -9,3 +9,7 @@
 > npm start **To Fire The Application**
 
 ``Open Browser And Go To: localhost:3000``
+
+##### Useful Commands
+
+> npm run lint 
