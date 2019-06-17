@@ -16,7 +16,7 @@ function Drawer({items, selectItem, itemLabelAttr, itemKeyAttr, isDrawerOpen}) {
       key={item[itemKeyAttr]}
       onClick={() => selectItem (item)}
     >
-      {iten[itemLabelAttr]}
+      {item[itemLabelAttr]}
     </div>
   ));
   return (
