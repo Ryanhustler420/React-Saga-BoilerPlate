@@ -20,13 +20,6 @@ function Drawer({items, selectItem, itemLabelAttr, itemKeyAttr, isDrawerOpen}) {
     </div>
   ));
   return (
-    // Computed Property
-    /**
-     * const b = {
-     *  [1 > 2 ? 'not': 'be']: 'safe'
-     * }
-     * b; // => {be: safe}
-     */
     <div
       className={classNames (styles.drawer, {
         [styles.drawerOpen]: isDrawerOpen,
