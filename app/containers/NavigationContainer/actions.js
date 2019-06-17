@@ -10,7 +10,7 @@ import {
   REQUEST_TOPICS_FAILED,
 } from './constants';
 
-export function reqestTopics () {
+export function requestTopics () {
   return {
     type: REQUEST_TOPICS
   };
