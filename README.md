@@ -79,3 +79,5 @@
 ## dependencies
 
 > npm i react-fontawesome --save
+
+> npm i classnames@2.2.5 --save
