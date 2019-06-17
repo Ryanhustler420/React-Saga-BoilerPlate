@@ -76,6 +76,15 @@
   ? [COMPONENT] Do you want i18n messages (i.e. will this component use text)? No
 ```
 
+> npm run generate component
+
+```sh
+  ? [COMPONENT] Select the type of component Stateless Function
+  ? [COMPONENT] What should it be called? Link
+  ? [COMPONENT] Does it have styling? Yes
+  ? [COMPONENT] Do you want i18n messages (i.e. will this component use text)? No
+```
+
 ## dependencies
 
 > npm i react-fontawesome --save
