@@ -16,6 +16,8 @@ const selectNavigationContainerDomain = () => state => state.get('navigationCont
 
 const selectNavigationContainer = () => createSelector(
   selectNavigationContainerDomain(),
+  // This will Trigger an Error. Can be solved by Importing some files
+  // Into routes.js file
   (substate) => substate.toJS()
 );
 

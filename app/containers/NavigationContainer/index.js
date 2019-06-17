@@ -7,12 +7,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import selectNavigationContainer from './selectors';
+import Navigation from '../../components/Navigation';
 
 export class NavigationContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <div>
-      </div>
+      <Navigation {...this.props}/>
     );
   }
 }
