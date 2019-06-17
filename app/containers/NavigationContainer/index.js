@@ -29,8 +29,12 @@ export class NavigationContainer extends React.Component { // eslint-disable-lin
 const mapStateToProps = selectNavigationContainer();
 
 function mapDispatchToProps(dispatch) {
+  // This function Attach These Function To PRops And We Can
+  // Call This From `Prop.selectTopic()` like this
+  // NOTE:- Navigation Component Can Also Access This Function
   return {
-    requestTopics: () => dispatch(requestTopics())
+    requestTopics: () => dispatch(requestTopics()),
+    selectTopic: (topic) => console.log("Selected topic:", topic)
   };
 }
 
