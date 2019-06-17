@@ -2,13 +2,13 @@
 
 > npm run
 
-``See all the commands that you can run``
+`See all the commands that you can run`
 
 > npm run setup **This Might Take Some Time Since The Dependency Is Downloading.**
 
 > npm start **To Fire The Application**
 
-``Open Browser And Go To: localhost:3000``
+`Open Browser And Go To: localhost:3000`
 
 ##### Useful Commands
 
@@ -47,7 +47,6 @@
   ? [COMPONENT] Do you want i18n messages (i.e. will this component use text)? No
 ```
 
-
 > npm run generate container
 
 ```sh
@@ -58,3 +57,16 @@
   ? [CONTAINER] Do you want sagas for asynchronous flows? (e.g. fetching data) Yes
   ? [CONTAINER] Do you want i18n messages (i.e. will this component use text)? No
 ```
+
+> npm run generate component
+
+```sh
+  ? [COMPONENT] Select the type of component Stateless Function
+  ? [COMPONENT] What should it be called? AppBar
+  ? [COMPONENT] Does it have styling? Yes
+  ? [COMPONENT] Do you want i18n messages (i.e. will this component use text)? No
+```
+
+## dependencies
+
+> npm i react-fontawesome --save
