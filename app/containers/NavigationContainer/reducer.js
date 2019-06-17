@@ -5,9 +5,7 @@
  */
 
 import { fromJS } from 'immutable';
-import {
-  DEFAULT_ACTION,
-} from './constants';
+import { } from './constants';
 
 const initialState = fromJS({
   topics: [
@@ -28,8 +26,6 @@ const initialState = fromJS({
 
 function navigationContainerReducer(state = initialState, action) {
   switch (action.type) {
-    case DEFAULT_ACTION:
-      return state;
     default:
       return state;
   }
