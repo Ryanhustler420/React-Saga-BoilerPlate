@@ -85,6 +85,13 @@
   ? [COMPONENT] Do you want i18n messages (i.e. will this component use text)? No
 ```
 
+> npm run generate route
+
+```sh
+? [ROUTE] Which component should the route show? LinkListContainer
+? [ROUTE] Enter the path of the route. /topic/:topicName
+```
+
 ## dependencies
 
 > npm i react-fontawesome --save
