@@ -64,27 +64,28 @@ export default function createRoutes(store) {
             importModules.catch(errorLoading);
           },
         },
+        {
+          path: '/login',
+          name: 'loginContainer',
+          getComponent(nextState, cb) {
+            const importModules = Promise.all([
+              System.import('containers/LoginContainer/reducer'),
+              System.import('containers/LoginContainer/sagas'),
+              System.import('containers/LoginContainer'),
+            ]);
+
+            const renderRoute = loadModule(cb);
+
+            importModules.then(([reducer, sagas, component]) => {
+              injectReducer('loginContainer', reducer.default);
+              injectSagas('loginContainer',sagas.default);
+              renderRoute(component);
+            });
+
+            importModules.catch(errorLoading);
+          },
+        },
       ]
-    }, {
-      path: '/login',
-      name: 'loginContainer',
-      getComponent(nextState, cb) {
-        const importModules = Promise.all([
-          System.import('containers/LoginContainer/reducer'),
-          System.import('containers/LoginContainer/sagas'),
-          System.import('containers/LoginContainer'),
-        ]);
-
-        const renderRoute = loadModule(cb);
-
-        importModules.then(([reducer, sagas, component]) => {
-          injectReducer('loginContainer', reducer.default);
-          injectSagas(sagas.default);
-          renderRoute(component);
-        });
-
-        importModules.catch(errorLoading);
-      },
     }, {
       path: '*',
       name: 'notfound',

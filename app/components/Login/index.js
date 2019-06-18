@@ -12,6 +12,7 @@ class Login extends React.Component { // eslint-disable-line react/prefer-statel
   render() {
     return (
       <div className={styles.login}>
+        This is the login component
       </div>
     );
   }

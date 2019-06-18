@@ -6,6 +6,7 @@
 
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
+import { Link } from 'react-router';
 
 import styles from './styles.css';
 
@@ -19,7 +20,7 @@ function AppBar ({ toggleDrawer }) {
         Coder daily
       </div>
       <div className={styles.linkContainer}>
-        Login
+        <Link to="/login">Login</Link>
       </div>
     </div>
   );
