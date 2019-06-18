@@ -16,7 +16,7 @@ function* fetchLinks(action) {
     // dispatch action to store links
     yield put(requestLinksSucceeded(links));
   }catch(e) {
-    console.log(e);
+    // console.log(e);
     // dispatch action to store error
     yield put(requestLinksFailed(e.message));
   }
