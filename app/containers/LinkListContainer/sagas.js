@@ -1,7 +1,6 @@
 // import { take, call, put, select } from 'redux-saga/effects';
 import { call, put } from 'redux-saga/effects';
-import { takeLatest } from 'redux-saga';
-import { SELECT_TOPIC } from '../NavigationContainer/constants';
+
 import { requestLinksSucceeded, requestLinksFailed } from './actions';
 
 function fetchLinksFromServer(topic) {
@@ -23,7 +22,7 @@ function* fetchLinks(action) {
 
 // Individual exports for testing
 export function* defaultSaga() {
-  yield* takeLatest(SELECT_TOPIC, fetchLinks)
+  
 }
 
 // All sagas to be loaded
