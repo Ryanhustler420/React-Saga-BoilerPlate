@@ -85,27 +85,28 @@ export default function createRoutes(store) {
             importModules.catch(errorLoading);
           },
         },
+        {
+          path: '/topic/:topicName/add',
+          name: 'linkFormContainer',
+          getComponent(nextState, cb) {
+            const importModules = Promise.all([
+              System.import('containers/LinkFormContainer/reducer'),
+              System.import('containers/LinkFormContainer/sagas'),
+              System.import('containers/LinkFormContainer'),
+            ]);
+
+            const renderRoute = loadModule(cb);
+
+            importModules.then(([reducer, sagas, component]) => {
+              injectReducer('linkFormContainer', reducer.default);
+              injectSagas('linkFormContainer',sagas.default);
+              renderRoute(component);
+            });
+
+            importModules.catch(errorLoading);
+          },
+        },
       ]
-    }, {
-      path: '/add',
-      name: 'linkFormContainer',
-      getComponent(nextState, cb) {
-        const importModules = Promise.all([
-          System.import('containers/LinkFormContainer/reducer'),
-          System.import('containers/LinkFormContainer/sagas'),
-          System.import('containers/LinkFormContainer'),
-        ]);
-
-        const renderRoute = loadModule(cb);
-
-        importModules.then(([reducer, sagas, component]) => {
-          injectReducer('linkFormContainer', reducer.default);
-          injectSagas(sagas.default);
-          renderRoute(component);
-        });
-
-        importModules.catch(errorLoading);
-      },
     }, {
       path: '*',
       name: 'notfound',
