@@ -119,6 +119,34 @@
 ? [ROUTE] Enter the path of the route. /login
 ```
 
+> npm run generate component
+
+```sh
+  ? [COMPONENT] Select the type of component ES6 Class
+  ? [COMPONENT] What should it be called? LinkForm
+  ? [COMPONENT] Does it have styling? Yes
+  ? [COMPONENT] Do you want i18n messages (i.e. will this component use text)? No
+```
+
+> npm run generate container
+
+```sh
+  ? [CONTAINER] What should it be called? LinkFormContainer
+  ? [CONTAINER] Do you want headers? No
+  ? [CONTAINER] Does it have styling? No
+  ? [CONTAINER] Do you want an actions/constants/selectors/reducer tupel for this container? Yes
+  ? [CONTAINER] Do you want sagas for asynchronous flows? (e.g. fetching data) Yes
+  ? [CONTAINER] Do you want i18n messages (i.e. will this component use text)? No
+```
+
+> npm run generate route
+
+```sh
+? [ROUTE] Which component should the route show? LinkFormContainer
+? [ROUTE] Enter the path of the route. /add
+```
+
+
 ## dependencies
 
 > npm i react-fontawesome --save
