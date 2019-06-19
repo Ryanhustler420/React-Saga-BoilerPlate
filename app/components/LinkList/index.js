@@ -9,14 +9,17 @@ import React from 'react';
 
 import styles from './styles.css';
 import Link from './../Link/index';
+import { Link as LinkButton } from 'react-router';
 
-function LinkList({ links, topicName, children }) {
+function LinkList(props) {
+  const { links, topicName, children, location } = props;
   const linkNodes = links.map(l => <Link key={l.id} link={l}/>);
 
   return (
     <div className={styles.linkList}>
       <h2>{topicName}</h2>
       {linkNodes}
+      <LinkButton to={`${location.pathname}/${"add"}`}>ADD NEW LINK</LinkButton>
       {children}
     </div>
   );
