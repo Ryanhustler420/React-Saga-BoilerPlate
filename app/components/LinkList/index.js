@@ -9,7 +9,6 @@ import React from 'react';
 
 import styles from './styles.css';
 import Link from './../Link/index';
-// import { Link as LinkButton } from 'react-router';
 import IconButton from '../IconButton';
 
 function LinkList(props) {
@@ -21,10 +20,11 @@ function LinkList(props) {
       <h2>{topicName}</h2>
       {linkNodes}
       <IconButton
-        onClick={() => {}}
+        onClick={() => {console.log('hey')}}
         icon="plus"
+        buttonClass={styles.button}
+        iconClass={styles.icon}
       />
-      {/* <LinkButton to={`${location.pathname}/${"add"}`}>ADD NEW LINK</LinkButton> */}
       {children}
     </div>
   );
