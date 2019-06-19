@@ -5,11 +5,12 @@
  */
 
 import {
-  DEFAULT_ACTION,
+  LOGIN
 } from './constants';
 
-export function defaultAction() {
+export function login(email) {
   return {
-    type: DEFAULT_ACTION,
+    type: LOGIN,
+    email,
   };
 }
