@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+import selectLoginContainer from '../LoginContainer/selectors';
 
 /**
  * Direct selector to the navigationContainer state domain
@@ -16,9 +17,8 @@ const selectNavigationContainerDomain = () => state => state.get('navigationCont
 
 const selectNavigationContainer = () => createSelector(
   selectNavigationContainerDomain(),
-  // This will Trigger an Error. Can be solved by Importing some files
-  // Into routes.js file
-  (substate) => substate.toJS()
+  selectLoginContainer(),
+  (substate, loginSubstate) => Object.assign(substate.toJS(), loginSubstate)
 );
 
 export default selectNavigationContainer;
