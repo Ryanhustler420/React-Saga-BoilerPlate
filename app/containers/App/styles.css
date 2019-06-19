@@ -5,7 +5,7 @@
  */
 /* These imports is required for fontawesome */
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
-@import url(https://fonts.googleapis.com/css?family=Roboto:400, 300, 500, 700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
 
 .container {
   display: block;
