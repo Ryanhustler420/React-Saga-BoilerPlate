@@ -5,7 +5,8 @@
  */
 
 import {
-  LOGIN
+  LOGIN,
+  CANCEL_LOGIN
 } from './constants';
 
 export function login(email) {
@@ -13,4 +14,10 @@ export function login(email) {
     type: LOGIN,
     email,
   };
+}
+
+export function cancelLogin() {
+  return {
+    type: CANCEL_LOGIN,
+  }
 }
