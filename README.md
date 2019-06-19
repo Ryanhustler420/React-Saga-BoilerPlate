@@ -146,6 +146,14 @@
 ? [ROUTE] Enter the path of the route. /add
 ```
 
+> npm run generate component
+
+```sh
+  ? [COMPONENT] Select the type of component ES6 Class
+  ? [COMPONENT] What should it be called? TextInput
+  ? [COMPONENT] Does it have styling? Yes
+  ? [COMPONENT] Do you want i18n messages (i.e. will this component use text)? No
+```
 
 ## dependencies
 
