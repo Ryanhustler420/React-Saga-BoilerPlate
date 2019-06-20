@@ -11,6 +11,11 @@ import TextInput from './../TextInput/index';
 
 class LinkForm extends React.Component {
   // eslint-disable-line react/prefer-stateless-function
+
+  static propTypes = {
+   addLink : React.PropTypes.func.isRequired, 
+  };
+
   state = {
     urlError: '',
     descriptionError: '',
@@ -23,11 +28,9 @@ class LinkForm extends React.Component {
     let urlError = null;
     let descriptionError = null;
 
-    if (
-      !url.match (
-        /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/
-      )
-    ) {
+    const pettern = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+
+    if (!pettern.test(url)) {
       urlError = 'Please provide a valid URL';
     }
 
@@ -40,9 +43,14 @@ class LinkForm extends React.Component {
       descriptionError,
     })
 
-    if(urlError || description){
+    if(urlError || descriptionError){
       return;
     }
+
+    this.props.addLink({
+      url,
+      description
+    })
   };
 
   render () {

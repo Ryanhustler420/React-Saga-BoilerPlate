@@ -4,4 +4,4 @@
  *
  */
 
-export const DEFAULT_ACTION = 'app/LinkFormContainer/DEFAULT_ACTION';
+export const ADD_LINK = 'app/LinkFormContainer/ADD_LINK';

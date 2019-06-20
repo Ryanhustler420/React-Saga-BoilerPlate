@@ -5,11 +5,12 @@
  */
 
 import {
-  DEFAULT_ACTION,
+  ADD_LINK
 } from './constants';
 
-export function defaultAction() {
+export function addLink(link) {
   return {
-    type: DEFAULT_ACTION,
+    type: ADD_LINK,
+    link,
   };
 }
