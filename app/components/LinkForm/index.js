@@ -15,6 +15,7 @@ class LinkForm extends React.Component {
   static propTypes = {
    addLink : React.PropTypes.func.isRequired,
    topicName: React.PropTypes.string.isRequired, 
+   addLinkCancelled: React.PropTypes.func.isRequired, 
   };
 
   state = {
@@ -77,7 +78,7 @@ class LinkForm extends React.Component {
           />
 
           <div className={styles.actionContainer}>
-            <div className={styles.button} onClick={this.props.cancelLogin}>
+            <div className={styles.button} onClick={this.props.addLinkCancelled}>
               cancel
             </div>
             <div className={styles.button} onClick={this.onAdd}>

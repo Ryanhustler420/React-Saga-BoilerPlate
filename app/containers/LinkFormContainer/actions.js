@@ -8,6 +8,7 @@ import {
   ADD_LINK,
   ADD_LINK_FAILED,
   ADD_LINK_SUCCESS,
+  ADD_LINK_CANCELLED,
 } from './constants';
 
 export function addLink(link) {
@@ -15,6 +16,12 @@ export function addLink(link) {
     type: ADD_LINK,
     link,
   };
+}
+
+export function addLinkCancelled() {
+  return {
+    type: ADD_LINK_CANCELLED,
+  }
 }
 
 export function addLinkSuccess(link) {
