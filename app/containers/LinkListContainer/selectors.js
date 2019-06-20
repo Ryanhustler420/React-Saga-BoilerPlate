@@ -17,9 +17,9 @@ const selectTopic = () => createSelector(
   selectRouteTopic(),
   (navigationState, routeTopicName) => {
     const selectedTopic = navigationState.topics.find(t => t.name === routeTopicName)
-
+    // This callback running twice. As Of Now Dont Know Why
     return selectedTopic || {
-      name: ''
+      name: 'libraries'
     }
   }
 )
@@ -30,7 +30,7 @@ const selectTopic = () => createSelector(
 const selectLinkListContainer = () => createSelector(
   selectLinkListContainerDomain(),
   selectTopic(),
-  (substate, topic) => Object.assign(substate.toJS(),{ topicName: topic.name })
+  (substate, topic) => Object.assign(substate.toJS(), { topicName: topic.name })
 );
 
 export default selectLinkListContainer;
