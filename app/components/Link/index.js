@@ -8,9 +8,9 @@ import React from 'react';
 
 import styles from './styles.css';
 
-function Link({link}) {
+function Link({link, onClick}) {
   return (
-    <div className={styles.link}>
+    <div className={styles.link} onClick={() => onClick(link)}>
       <div className={styles.votingContainer}>
         <div className={styles.votingCount}>
           {link.voteCount}

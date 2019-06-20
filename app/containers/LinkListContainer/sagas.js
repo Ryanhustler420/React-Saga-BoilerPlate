@@ -1,10 +1,12 @@
 // import { take, call, put, select } from 'redux-saga/effects';
-import { call, put } from 'redux-saga/effects';
+import { call, put, select } from 'redux-saga/effects';
 
-import { requestLinksSucceeded, requestLinksFailed } from './actions';
-import { REQUEST_LINKS, START_ADD } from './constants';
+import { requestLinksSucceeded, requestLinksFailed, updateVoteSuccessful, updateVoteFailed } from './actions';
+import { REQUEST_LINKS, START_ADD, UPDATE_VOTE } from './constants';
 import { takeLatest } from 'redux-saga';
 import { push } from 'react-router-redux';
+import selectLoginContainer from '../LoginContainer/selectors';
+import {updateVoteapi} from '../../api/index';
 
 function fetchLinksFromServer(topicName) {
   return fetch(`http://localhost:3000/api/topics/${topicName}/links`)
@@ -31,6 +33,22 @@ export function* startAddSaga() {
   yield* takeLatest(START_ADD, startAdd);
 }
 
+function* updateVoteCount(action) {
+  // console.log(action);
+  try {
+    const state = yield select(selectLoginContainer());
+    const updatedLink = yield call(updateVoteapi, state.email, action.link.id);
+    yield put(updateVoteSuccessful(updatedLink));
+    yield put(push(`/topic/${action.link.topicName}`));
+  }catch(e) {
+    yield put(updateVoteFailed(e.message, action.link))
+  }
+}
+
+export function* updateVoteCountSaga() {
+  yield* takeLatest(UPDATE_VOTE, updateVoteCount)
+}
+
 // Individual exports for testing
 export function* defaultSaga() {
   yield* takeLatest(REQUEST_LINKS, fetchLinks)
@@ -40,4 +58,5 @@ export function* defaultSaga() {
 export default [
   defaultSaga,
   startAddSaga,
+  updateVoteCountSaga,
 ];
