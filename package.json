@@ -210,7 +210,7 @@
     "sanitize.css": "4.1.0",
     "warning": "3.0.0",
     "whatwg-fetch": "1.0.0",
-    "yarn": "^1.16.0"
+    "yarn": "^1.22.0"
   },
   "devDependencies": {
     "babel-cli": "6.11.4",
